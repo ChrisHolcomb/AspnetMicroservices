@@ -42,22 +42,22 @@ public class CatalogController : ControllerBase
         return Ok(product);
     }
 
-    [Route("[action]/{category}", Name = "GetProductByCategory")]
+    [Route("[action]/{category}", Name = "GetProductsByCategory")]
     [HttpGet]
     [ProducesResponseType(typeof(IEnumerable<Product>), (int)HttpStatusCode.OK)]
-    public async Task<ActionResult<IEnumerable<Product>>> GetProductByCategory(string category)
+    public async Task<ActionResult<IEnumerable<Product>>> GetProductsByCategory(string category)
     {
-        var products = await _repository.GetProductByCategory(category);
+        var products = await _repository.GetProductsByCategory(category);
         return Ok(products);
     }
 
-    [Route("[action]/{name}", Name = "GetProductByName")]
+    [Route("[action]/{name}", Name = "GetProductsByName")]
     [HttpGet]
     [ProducesResponseType((int)HttpStatusCode.NotFound)]
     [ProducesResponseType(typeof(IEnumerable<Product>), (int)HttpStatusCode.OK)]
-    public async Task<ActionResult<IEnumerable<Product>>> GetProductByName(string name)
+    public async Task<ActionResult<IEnumerable<Product>>> GetProductsByName(string name)
     {
-        var items = await _repository.GetProductByName(name);
+        var items = await _repository.GetProductsByName(name);
         if (items == null)
         {
             _logger.LogError($"Products with name: {name} not found.");

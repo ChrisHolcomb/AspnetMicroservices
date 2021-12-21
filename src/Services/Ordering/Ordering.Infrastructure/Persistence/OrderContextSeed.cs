@@ -22,12 +22,12 @@ public class OrderContextSeed
         {
             new Order()
             {
-                UserName = "swn", 
-                FirstName = "Mehmet", 
-                LastName = "Ozkaya", 
-                EmailAddress = "ezozkme@gmail.com", 
-                AddressLine = "Bahcelievler", 
-                Country = "Turkey", 
+                UserName = "cholcomb", 
+                FirstName = "Chris", 
+                LastName = "Holcomb", 
+                EmailAddress = "christopher.holcomb@gmail.com", 
+                AddressLine = "Some Place", 
+                Country = "USA", 
                 TotalPrice = 350
             }
         };
